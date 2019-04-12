@@ -1,0 +1,37 @@
+{
+  "name": "serverless-koa-starter",
+  "description": "Serverless Koa starter",
+  "version": "1.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "author": "krols.bj@gmail.com",
+  "scripts": {
+    "dev": "npx serverless offline start --stage dev",
+    "deploy": "npx serverless deploy --stage prod",
+    "prettier": "npx prettier --write **/*.js **/*.json **/*.yml **/*.md"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx pretty-quick --staged",
+      "pre-push": "npm run test"
+    }
+  },
+  "dependencies": {
+    "@koa/cors": "^3.0.0",
+    "http-status-codes": "^1.3.2",
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-helmet": "^4.1.0",
+    "koa-logger": "^3.2.0",
+    "koa-router": "^7.4.0",
+    "serverless-http": "^1.9.1"
+  },
+  "devDependencies": {
+    "husky": "^1.3.1",
+    "prettier": "^1.16.4",
+    "pretty-quick": "^1.10.0",
+    "serverless": "^1.40.0",
+    "serverless-domain-manager": "^3.2.1",
+    "serverless-offline": "^4.9.4"
+  }
+}
