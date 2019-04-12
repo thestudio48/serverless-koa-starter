@@ -1,6 +1,7 @@
 service: serverless-koa-starter
 
 plugins:
+  - serverless-apigw-binary
   - serverless-offline
   - serverless-domain-manager
 
@@ -28,4 +29,7 @@ custom:
         domainName: my-domain.com
         createRoute53Record: true
         stage: prod
+  apigwBinary:
+    types:
+      - "*/*"   
   customDomain: ${self:custom.config.customDomain.${opt:stage}}

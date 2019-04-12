@@ -46,4 +46,6 @@ application
   .use(router.routes())
   .use(router.allowedMethods());
 
-module.exports.handler = serverless(application);
+module.exports.handler = serverless(application, {
+  binary: ["*/*"]
+});
